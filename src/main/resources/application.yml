@@ -12,10 +12,25 @@ telegram:
 binance:
   api:
     getPrice: https://api.binance.com/api/v3/avgPrice?symbol=BTCUSDT
-
-db:
-  driver:
-    name: org.postgresql.Driver
-  url: jdbc:postgresql://localhost:5432/db
-  user: root
-  password: root
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/db
+    username: root
+    password: test
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: true
+        hbm2ddl:
+          auto: update
+time:
+  TWO_MINUTES_IN_MILLIS: 120_000
+  TEN_MINUTES_IN_MILLIS: 600_000
+#db:
+#  driver:
+#    name: org.postgresql.Driver
+#  url: jdbc:postgresql://localhost:5432/db
+#  user: root
+#  password: root
